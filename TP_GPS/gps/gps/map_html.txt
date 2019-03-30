@@ -1,0 +1,26 @@
+#define MAP_HTML "<html><head><script type=\"text/javascript\" " \
+"src=\"http://maps.google.com/maps/api/js?sensor=false\"></script>" \
+"<script  type=\"text/javascript\">" \
+"   var map;" \
+"   var latlng;" \
+"   var currentPosition = null;"\
+"   var previousPosition = null;"\
+"   var pos = null;"\
+"   var myOptions = {zoom: 13, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP};"\
+"   function traceParcours(){"\
+"       var newLineCoordinates = [ currentPosition , previousPosition ];" \
+"       var newLine = new google.maps.Polyline({" \
+"       path: newLineCoordinates," \
+"       strokeColor: \"red\"," \
+"       strokeOpacity: 1.0," \
+"       strokeWeight: 2," \
+"       fillOpacity: 0" \
+"       });" \
+"       newLine.setMap(map);}" \
+"    function placeMarker(){"\
+"       var location = new google.maps.LatLng(pos);"\
+"       var marker = new google.maps.Marker({position: pos, map: map});}"\
+"</script>" \
+"</head><body style=\"margin:0px; padding:0px;\">" \
+"<div id=\"map_canvas\" style=\"width:100%; height:100%\"></div>" \
+"</body></html>"
